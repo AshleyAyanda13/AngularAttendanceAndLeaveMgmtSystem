@@ -1,0 +1,31 @@
+<!-- employee-profile.component.html -->
+<div class="container py-5">
+  <div class="card p-4 shadow-lg border-0">
+    <h2 class="mb-4 text-primary text-center">Welcome, {{ EmployeeDetails.username }}</h2>
+
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <ul class="list-group list-group-flush rounded">
+          <li class="list-group-item"><strong>Username:</strong> {{ EmployeeDetails.username }}</li>
+          <li class="list-group-item"><strong>Surname:</strong> {{ EmployeeDetails.surname }}</li>
+          <li class="list-group-item"><strong>Date of Birth:</strong> {{ EmployeeDetails.dateOfBirth }}</li>
+          <li class="list-group-item"><strong>Email:</strong> {{ EmployeeDetails.email }}</li>
+          <li class="list-group-item"><strong>Gender:</strong> {{ EmployeeDetails.gender }}</li>
+          <li class="list-group-item"><strong>Next of Kin Name:</strong> {{ EmployeeDetails.nextOfKinName }}</li>
+          <li class="list-group-item"><strong>Next of Kin Number:</strong> {{ EmployeeDetails.nextOfKinNumber }}</li>
+          <li class="list-group-item"><strong>Address:</strong> {{ EmployeeDetails.address }}</li>
+          <li class="list-group-item"><strong>ID Number:</strong> {{ EmployeeDetails.IDNumber }}</li>
+        </ul>
+
+        <div class="mt-4 text-center">
+          <button class="btn btn-outline-primary me-2 px-4" [routerLink]="['/editemployeedetail']">
+            <i class="bi bi-pencil-square me-1"></i> Edit Profile
+          </button>
+          <button class="btn btn-outline-danger px-4" (click)="OnLogout()">
+            <i class="bi bi-box-arrow-right me-1"></i> Logout
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

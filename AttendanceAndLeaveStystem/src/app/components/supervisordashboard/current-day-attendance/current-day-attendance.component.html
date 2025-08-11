@@ -1,0 +1,51 @@
+<!-- Today's Attendance Records Section -->
+<div class="container py-5">
+  <div class="card p-4 shadow-lg border-0">
+    <h2 class="mb-4 text-center text-primary fw-bold">All Employees Today's Attendance Records</h2>
+
+    <div class="table-responsive">
+      <table class="table table-bordered table-hover align-middle">
+        <thead class="table-info text-center">
+          <tr>
+            <th scope="col">No.</th>
+            <th scope="col">Date</th>
+            <th scope="col">Full Name</th>
+            <th scope="col">Clock-In Time</th>
+            <th scope="col">Clock-in Reason</th>
+            <th scope="col">Clock-out Time</th>
+            <th scope="col">Clockout Reason</th>
+            <th scope="col">Late?</th>
+            <th scope="col">Left Early?</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let items of Inventoryitems; let i = index">
+            <td class="text-center fw-semibold">{{ i + 1 }}</td>
+            <td>{{ items.date }}</td>
+            <td>{{ items.fullNames }}</td>
+            <td>{{ items.clockInTime }}</td>
+            <td>{{ items.clockInReason }}</td>
+            <td>{{ items.clockoutTime }}</td>
+            <td>{{ items.clockOutReason }}</td>
+            <td class="text-center">
+              <span [ngClass]="{
+                'badge bg-success': items.isLate === 'No',
+                'badge bg-danger': items.isLate === 'Yes'
+              }">
+                {{ items.isLate }}
+              </span>
+            </td>
+            <td class="text-center">
+              <span [ngClass]="{
+                'badge bg-success': items.LeftEarly === 'No',
+                'badge bg-warning text-dark': items.LeftEarly === 'Yes'
+              }">
+                {{ items.LeftEarly }}
+              </span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

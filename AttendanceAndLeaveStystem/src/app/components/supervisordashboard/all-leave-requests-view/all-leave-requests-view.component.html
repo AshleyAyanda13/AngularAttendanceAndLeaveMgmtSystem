@@ -1,0 +1,51 @@
+ 
+<div class="container py-5">
+  <div class="card p-4 shadow-lg border-0">
+    <h2 class="mb-4 text-center text-primary fw-bold">All Employees Leave Requests</h2>
+
+    
+     
+
+    <div class="table-responsive">
+      <table class="table table-bordered table-hover align-middle">
+        <thead class="table-success text-center">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Start Date</th>
+            <th scope="col">End Date</th>
+            <th scope="col">Reason</th>
+            <th scope="col">Request Date</th>
+             <th scope="col">My Responses</th>
+            <th scope="col">Status</th>
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of LeaveRequestsHolder; let i = index">
+            <td class="text-center fw-semibold">{{ i + 1 }}</td>
+            <td>{{ item.startDate }}</td>
+            <td>{{ item.endDate }}</td>
+            <td>{{ item.reason }}</td>
+            <td>{{ item.requestDate }}</td>
+            <td>{{ item.responsereason }}</td>
+            <td class="text-center">
+              <span [ngClass]="{
+                'badge bg-warning text-dark': item.status === 'Pending',
+                'badge bg-success': item.status === 'Approved',
+                'badge bg-danger': item.status === 'Rejected'
+              }">
+                {{ item.status }}
+              </span>
+            </td>
+            <td class="text-center">
+              <button class="btn btn-sm btn-outline-primary me-2 px-3" (click)="editSupervisorLeaveRequest(item.id)">
+                <i class="bi bi-pencil-square me-1"></i> Edit
+              </button>
+              
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

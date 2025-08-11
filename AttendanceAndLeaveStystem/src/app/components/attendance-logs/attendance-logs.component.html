@@ -1,0 +1,45 @@
+<!-- attendance-record.component.html -->
+<div class="container mt-5">
+  <div class="card shadow-lg border-0 p-4">
+    <h2 class="text-center text-primary mb-4">My Attendance Record</h2>
+
+    <div class="table-responsive">
+      <table class="table table-bordered table-hover align-middle">
+        <thead class="table-info text-center">
+          <tr>
+            <th>#</th>
+            <th>Date</th>
+            <th>Clock-In Time</th>
+            <th>Clock-In Reason</th>
+            <th>Clock-Out Time</th>
+            <th>Clock-Out Reason</th>
+            <th>Late?</th>
+            <th>Left Early?</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let items of AllmyLogs; let i = index">
+            <td class="text-center fw-bold">{{ i + 1 }}</td>
+            <td>{{ items.date }}</td>
+            <td>{{ items.clockInTime }}</td>
+            <td>{{ items.clockInReason || '—' }}</td>
+            <td>{{ items.clockOutTime }}</td>
+            <td>{{ items.clockOutReason || '—' }}</td>
+            <td>
+              <span [ngClass]="{
+                'badge bg-success': items.late === 'No',
+                'badge bg-danger': items.late === 'Yes'
+              }">{{ items.late }}</span>
+            </td>
+            <td>
+              <span [ngClass]="{
+                'badge bg-success': items.leftEarly === 'No',
+                'badge bg-warning text-dark': items.leftEarly === 'Yes'
+              }">{{ items.leftEarly }}</span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

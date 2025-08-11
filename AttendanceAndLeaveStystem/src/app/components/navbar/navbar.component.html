@@ -1,0 +1,35 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+    <div class="container-fluid">
+
+        <a class="navbar-brand font-weight-bold" *ngIf="role==='EMPLOYEE'" routerLink="home">💼 </a>
+          <a class="navbar-brand font-weight-bold"  *ngIf="role==='SUPERVISOR'" routerLink="supervisorpage">💼 </a>
+        <button class="navbar-toggler" type="button" (click)="toggleNavbar()">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+ 
+        <div class="collapse navbar-collapse" id="navbarNav" #navbarNav>
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item" *ngIf="role==='EMPLOYEE'"><a class="nav-link" routerLink="home"><i class="fas fa-home"></i> Home</a></li>
+         
+                <li class="nav-item" *ngIf="role==='EMPLOYEE'"><a class="nav-link" routerLink="EmployeeAttendenceLogs"><i class="fas fa-user"></i>Attendance Logs</a></li>
+                         <li class="nav-item" *ngIf="role==='EMPLOYEE'"><a class="nav-link" routerLink="LeaveRequestPage">
+                        <i class="fas fa-user"></i> My Leave Requests</a></li>
+                  <li class="nav-item" *ngIf="role==='EMPLOYEE'"><a class="nav-link" routerLink="employeedetailspage"><i class="fas fa-user"></i> Profile</a></li>
+           
+           
+             <li class="nav-item" *ngIf="role==='SUPERVISOR'"><a class="nav-link" routerLink="supervisorpage"><i class="fas fa-home"></i> All Employees Attendance Logs</a></li>
+           
+             <li class="nav-item" *ngIf="role==='SUPERVISOR'"><a class="nav-link" routerLink="SupervisorViewAllLeaves"><i class="fas fa-home"></i> All Employees Leave Requests</a></li>
+                </ul>
+                <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <button class="btn btn-outline-danger" (click)="logout()">
+            <i class="fas fa-sign-out-alt"></i> Logout
+          </button>
+        </li>
+      </ul>
+             
+           
+        </div>
+    </div>
+</nav>

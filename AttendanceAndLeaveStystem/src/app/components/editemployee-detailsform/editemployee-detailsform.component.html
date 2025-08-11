@@ -1,0 +1,97 @@
+<form [formGroup]="registrationForm" (ngSubmit)="onSubmit()" class="container mt-4 p-4 border rounded shadow">
+  
+  
+    <h2 class="text-center text-primary">Edit Your Details</h2>
+  <div class="mb-3">
+    <label class="form-label">Email:</label>
+    <input type="email" class="form-control" formControlName="email">
+    <div *ngIf="formSubmitted && registrationForm.get('email')?.invalid" class="text-danger">
+      <small *ngIf="registrationForm.get('email')?.errors?.['required']">Email is required.</small>
+      <small *ngIf="registrationForm.get('email')?.errors?.['email']">Invalid email format.</small>
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">Username:</label>
+    <input type="text" class="form-control" formControlName="username">
+    <div *ngIf="formSubmitted && registrationForm.get('username')?.invalid" class="text-danger">
+      <small *ngIf="registrationForm.get('username')?.errors?.['required']">Username is required.</small>
+      <small *ngIf="registrationForm.get('username')?.errors?.['minlength']">Username must be at least 3 characters long.</small>
+    </div>
+  </div>
+  <div class="mb-3">
+  <label class="form-label">Surname:</label>
+  <input type="text" class="form-control" formControlName="surname">
+  <div *ngIf="formSubmitted && registrationForm.get('surname')?.invalid" class="text-danger">
+    <small *ngIf="registrationForm.get('surname')?.errors?.['required']">Surname is required.</small>
+    <small *ngIf="registrationForm.get('surname')?.errors?.['minlength']">Surname must be at least 2 characters long.</small>
+  </div>
+</div>
+
+  <div class="mb-3">
+    <label class="form-label">Address:</label>
+    <input type="text" class="form-control" formControlName="address">
+    <div *ngIf="formSubmitted && registrationForm.get('Address')?.invalid" class="text-danger">
+      <small *ngIf="registrationForm.get('Address')?.errors?.['required']">Address is required.</small>
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">Date Of Birth:</label>
+    <input type="date" class="form-control" formControlName="dateOfBirth">
+    <div *ngIf="formSubmitted && registrationForm.get('DateOfBirth')?.invalid" class="text-danger">
+      <small *ngIf="registrationForm.get('DateOfBirth')?.errors?.['required']">Date of Birth is required.</small>
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">ID Number:</label>
+    <input type="text" class="form-control" formControlName="IDNumber">
+    <div *ngIf="formSubmitted && registrationForm.get('IDNumber')?.invalid" class="text-danger">
+      <small *ngIf="registrationForm.get('IDNumber')?.errors?.['required']">ID Number is required.</small>
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">Gender:</label>
+    <input type="text" class="form-control" formControlName="gender">
+    <div *ngIf="formSubmitted && registrationForm.get('Gender')?.invalid" class="text-danger">
+      <small *ngIf="registrationForm.get('Gender')?.errors?.['required']">Gender is required.</small>
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">Next Of Kin Name:</label>
+    <input type="text" class="form-control" formControlName="nextOfKinName">
+    <div *ngIf="formSubmitted && registrationForm.get('NextOfKinName')?.invalid" class="text-danger">
+      <small *ngIf="registrationForm.get('NextOfKinName')?.errors?.['required']">Next Of Kin Name is required.</small>
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">Next Of Kin Phone Number:</label>
+    <input type="text" class="form-control" formControlName="nextOfKinNumber">
+    <div *ngIf="formSubmitted && registrationForm.get('NextOfKinPhoneNumber')?.invalid" class="text-danger">
+      <small *ngIf="registrationForm.get('NextOfKinPhoneNumber')?.errors?.['required']">Next Of Kin Phone Number is required.</small>
+    </div>
+  </div>
+
+ 
+
+
+
+  <div class="errors">
+    <div *ngIf="errors.Email" class="text-danger">{{ errors.Email }}</div>
+ 
+    <p *ngIf="errors.Username" class="text-danger">{{ errors.Username }}</p>
+   
+    <p *ngFor="let item of adderrors | keyvalue" class="text-danger">
+      {{ item.value.description }}
+    </p>
+  </div>
+<div class="mt-4">
+  <button type="submit" class="btn btn-primary">Edit Records</button>
+  
+  <button type="button" class="btn btn-outline-secondary" (click)="onCancel()">Cancel</button>
+  </div>
+</form>

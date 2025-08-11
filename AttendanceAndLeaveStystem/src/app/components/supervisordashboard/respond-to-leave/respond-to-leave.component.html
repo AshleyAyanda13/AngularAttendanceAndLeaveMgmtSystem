@@ -1,0 +1,65 @@
+<!-- edit-leave.component.html -->
+<div class="container py-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8 col-lg-6">
+      <div class="card shadow-lg border-0 rounded-4">
+        <div class="card-header bg-gradient bg-primary text-white text-center rounded-top-4">
+          <h2 class="mb-0 fw-bold">Respond to Leave Request</h2>
+        </div>
+        <div class="card-body p-4">
+          <form [formGroup]="RespondtoLeaveForm" (ngSubmit)="EditSupervisorLeaveRequest()">
+            <div class="mb-4">
+              <h5 class="fw-semibold">Employee Details</h5>
+              <ul *ngIf="DataHolder" class="list-group list-group-flush">
+                <li class="list-group-item"><strong>Username:</strong> {{ DataHolder.user.username }}</li>
+                <li class="list-group-item"><strong>Surname:</strong> {{ DataHolder.user.surname }}</li>
+                <li class="list-group-item"><strong>Start Date:</strong> {{ DataHolder.startDate }}</li>
+                <li class="list-group-item"><strong>End Date:</strong> {{ DataHolder.endDate }}</li>
+                <li class="list-group-item"><strong>Reason:</strong> {{ DataHolder.reason }}</li>
+              </ul>
+            </div>
+
+            <div class="mb-3">
+              <label for="reason" class="form-label fw-semibold">Supervisor's Comment</label>
+              <textarea
+                rows="4"
+                id="reason"
+                class="form-control border-primary-subtle"
+                placeholder="Type your reason here..."
+                formControlName="Reason"
+              ></textarea>
+            </div>
+  <div class="invalid-feedback"  *ngIf="formSubmitted && RespondtoLeaveForm.get('Reason')?.errors?.['required']">
+    Comment is required.
+  </div>
+           <div class="mb-4">
+  <label for="status" class="form-label fw-semibold">Leave Status</label>
+  <select
+    id="status"
+    class="form-select border-primary-subtle"
+    formControlName="status"
+    [ngClass]="{'is-invalid': formSubmitted && RespondtoLeaveForm.get('status')?.invalid}"
+  >
+    <option value="" disabled>Select Status</option>
+    <option value="PENDING">PENDING</option>
+    <option value="APPROVED">APPROVED</option>
+    <option value="REJECTED">REJECTED</option>
+  </select>
+
+  <div class="invalid-feedback" *ngIf="formSubmitted && RespondtoLeaveForm.get('status')?.errors?.['required']">
+    Status is required.
+  </div>
+</div>
+
+            <div class="d-grid gap-2">
+              <button type="submit" class="btn btn-success fw-bold">
+                <i class="bi bi-pencil-square me-2"></i> Update Leave Request
+              </button>
+              <button type="button" class="btn btn-outline-secondary" (click)="onCancel()">Cancel</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

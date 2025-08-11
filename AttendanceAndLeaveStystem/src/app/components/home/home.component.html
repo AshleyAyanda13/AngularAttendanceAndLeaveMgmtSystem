@@ -1,0 +1,40 @@
+<div class="container min-vh-100 d-flex justify-content-center align-items-center bg-light">
+  <div class="card shadow-lg p-4 rounded-4" style="max-width: 400px; width: 100%;">
+    
+    <div *ngIf="ErrorHolder" class="alert alert-danger text-center mb-3">
+      {{ ErrorHolder }}
+    </div>
+
+    <h5 class="card-title text-center fw-bold mb-3 text-primary">Attendance System</h5>
+    <p class="text-center text-muted mb-4">
+      Current Time: <span class="fw-bold text-dark">{{ timer }}</span>
+    </p>
+
+    <ng-container *ngIf="isInitialized">
+      <button 
+        class="btn btn-primary w-100 fw-semibold mb-3"
+        (click)="toggleClock()" 
+        [disabled]="isProcessing"
+        [attr.aria-label]="isClockedIn ? 'Clock Out' : 'Clock In'">
+        <i class="bi bi-clock me-2"></i> {{ isClockedIn ? 'Clock Out' : 'Clock In' }}
+      </button>
+    </ng-container>
+
+    <div class="mb-2">
+      <label for="earlyReason" class="form-label fw-semibold">Reason:</label>
+      <textarea
+        id="earlyReason"
+        rows="3"
+        class="form-control"
+        placeholder="Type your reason here..."
+        [(ngModel)]="earlyLeaveReason"
+        [disabled]="isProcessing"
+        aria-describedby="reasonHelp"
+      ></textarea>
+      <small id="reasonHelp" class="form-text text-muted">
+        Optional: Provide a reason if clocking out early.
+      </small>
+    </div>
+
+  </div>
+</div>

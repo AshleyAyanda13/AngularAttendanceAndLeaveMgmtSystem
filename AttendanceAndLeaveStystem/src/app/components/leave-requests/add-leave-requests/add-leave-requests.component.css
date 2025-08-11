@@ -1,0 +1,28 @@
+/* add-leave.component.css */
+.card {
+  border-radius: 12px;
+}
+
+.card-header {
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.form-label {
+  font-size: 1rem;
+  color: #333;
+}
+
+textarea::placeholder {
+  color: #aaa;
+  font-style: italic;
+}
+
+.btn-success {
+  transition: all 0.3s ease;
+}
+
+.btn-success:hover {
+  background-color: #218838;
+  transform: scale(1.02);
+}

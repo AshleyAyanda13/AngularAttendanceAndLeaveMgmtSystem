@@ -1,0 +1,45 @@
+<!-- add-leave.component.html -->
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8 col-lg-6">
+      <div class="card shadow-lg border-0">
+        <div class="card-header bg-success text-white text-center">
+          <h2 class="mb-0">New Leave Request</h2>
+        </div>
+        <div class="card-body p-4">
+          <form [formGroup]="AddLeaveForm" (ngSubmit)="AddLeave()">
+            <div class="mb-3">
+              <label for="date" class="form-label fw-semibold">Start Date</label>
+              <input type="date" id="date" class="form-control" formControlName="Date" required>
+            </div>
+
+            <div class="mb-3">
+              <label for="date2" class="form-label fw-semibold">End Date</label>
+              <input type="date" id="date2" class="form-control" formControlName="Date2" required>
+            </div>
+<div class="alert alert-danger mt-2"
+     *ngIf="AddLeaveForm.errors?.['dateRangeInvalid'] && formSubmitted">
+  End date must be after or equal to start date.
+</div>
+
+            <div class="mb-3">
+              <label for="reason" class="form-label fw-semibold">Reason</label>
+              <textarea
+                rows="4"
+                id="reason"
+                class="form-control"
+                placeholder="Type your reason here..."
+                formControlName="Reason"
+              ></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-success w-100 fw-bold" [disabled]="AddLeaveForm.invalid">
+              <i class="bi bi-send-fill me-2"></i> Submit Request
+            </button>
+            <button type="button" class="btn btn-outline-secondary" (click)="onCancel()">Cancel</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
