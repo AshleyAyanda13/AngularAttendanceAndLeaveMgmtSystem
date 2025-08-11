@@ -74,7 +74,7 @@ Access the deployed app on [Vercel] https://angular-attendance-and-leave-mgmt-sy
 
 
 ### 🗄️ Database
-
+SQL
 
 
 ### 🚀 Deployment
