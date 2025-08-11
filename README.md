@@ -1,7 +1,7 @@
 
 # 🕒 Clock-In/Out System with Leave Management
 
-A full-stack web application that enables employees to **clock in/out**, manage **leave requests**, and update personal details. It features secure **authentication**, **role-based access**, and robust **form validation**. Built with Spring Boot and deployed on Vercel.
+A full-stack web application that enables employees to **clock in/out**, manage **leave requests**, and update personal details. It features secure **authentication**, **role-based access**, and robust **form validation**. Built with Spring Boot Angular 19 and deployed on Vercel.
 
 ## 🚀 Live Demo
 
