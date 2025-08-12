@@ -31,16 +31,16 @@
   <div class="mb-3">
     <label class="form-label">Address:</label>
     <input type="text" class="form-control" formControlName="address">
-    <div *ngIf="formSubmitted && registrationForm.get('Address')?.invalid" class="text-danger">
-      <small *ngIf="registrationForm.get('Address')?.errors?.['required']">Address is required.</small>
+    <div *ngIf="formSubmitted && registrationForm.get('address')?.invalid" class="text-danger">
+      <small *ngIf="registrationForm.get('address')?.errors?.['required']">Address is required.</small>
     </div>
   </div>
 
   <div class="mb-3">
     <label class="form-label">Date Of Birth:</label>
     <input type="date" class="form-control" formControlName="dateOfBirth">
-    <div *ngIf="formSubmitted && registrationForm.get('DateOfBirth')?.invalid" class="text-danger">
-      <small *ngIf="registrationForm.get('DateOfBirth')?.errors?.['required']">Date of Birth is required.</small>
+    <div *ngIf="formSubmitted && registrationForm.get('dateOfBirth')?.invalid" class="text-danger">
+      <small *ngIf="registrationForm.get('dateOfBirth')?.errors?.['required']">Date of Birth is required.</small>
     </div>
   </div>
 
@@ -52,27 +52,31 @@
     </div>
   </div>
 
-  <div class="mb-3">
-    <label class="form-label">Gender:</label>
-    <input type="text" class="form-control" formControlName="gender">
-    <div *ngIf="formSubmitted && registrationForm.get('Gender')?.invalid" class="text-danger">
-      <small *ngIf="registrationForm.get('Gender')?.errors?.['required']">Gender is required.</small>
-    </div>
+ <div class="mb-3">
+  <label class="form-label">Gender:</label>
+  <select class="form-select" formControlName="gender">
+    <option value="" disabled selected>Select gender</option>
+    <option value="Male">Male</option>
+    <option value="Female">Female</option>
+  </select>
+  <div *ngIf="formSubmitted && registrationForm.get('gender')?.invalid" class="text-danger">
+    <small *ngIf="registrationForm.get('gender')?.errors?.['required']">Gender is required.</small>
   </div>
+</div>
 
   <div class="mb-3">
     <label class="form-label">Next Of Kin Name:</label>
     <input type="text" class="form-control" formControlName="nextOfKinName">
-    <div *ngIf="formSubmitted && registrationForm.get('NextOfKinName')?.invalid" class="text-danger">
-      <small *ngIf="registrationForm.get('NextOfKinName')?.errors?.['required']">Next Of Kin Name is required.</small>
+    <div *ngIf="formSubmitted && registrationForm.get('nextOfKinName')?.invalid" class="text-danger">
+      <small *ngIf="registrationForm.get('nextOfKinName')?.errors?.['required']">Next Of Kin Name is required.</small>
     </div>
   </div>
 
   <div class="mb-3">
     <label class="form-label">Next Of Kin Phone Number:</label>
     <input type="text" class="form-control" formControlName="nextOfKinNumber">
-    <div *ngIf="formSubmitted && registrationForm.get('NextOfKinPhoneNumber')?.invalid" class="text-danger">
-      <small *ngIf="registrationForm.get('NextOfKinPhoneNumber')?.errors?.['required']">Next Of Kin Phone Number is required.</small>
+    <div *ngIf="formSubmitted && registrationForm.get('nextOfKinNumber')?.invalid" class="text-danger">
+      <small *ngIf="registrationForm.get('nextOfKinNumber')?.errors?.['required']">Next Of Kin Phone Number is required.</small>
     </div>
   </div>
 
