@@ -5,7 +5,7 @@ A full-stack web application that enables employees to **clock in/out**, manage 
 
 ## 🚀 Live Demo
 
-Access the deployed app on [Vercel] https://angular-attendance-and-leave-mgmt-system-ityvh2ksq.vercel.app/loginn
+Access the deployed app on [Vercel] (https://angular-attendance-and-leave-mgmt-system-g1jv98d71.vercel.app)
 
 ## 🔐 Key Features
 
