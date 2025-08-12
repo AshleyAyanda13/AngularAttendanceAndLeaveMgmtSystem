@@ -55,14 +55,14 @@ adderrors: { [key: string]: { description: string } } = {};
     });
   }
   onSubmit() {
- 
+ this.formSubmitted = true;
   if (this.registrationForm.invalid) {
     return; // Stop if form is invalid
   }
 
   const payload = this.registrationForm.value
   console.log('Form submitted with payload:', payload);
-this.formSubmitted = true;
+
 
 this.apiService.postEditedEmployeeDetails(payload).subscribe({
       next: (response) => {
