@@ -82,10 +82,11 @@ SQL
 
 - Frontend: Vercel
 - Backend: Render : https://employeeattendanceandmgmtsystem.onrender.com/
+
 - 
 ## For Employee 
 Register with your own credentials then login.(Allows concurrent login)
-1. Clock in/out with reasons(applicable only if you clock in after 8am or if you clock out before pm  )
+1. Clock in/out with reasons(applicable only if you clock in after 8am or if you clock out before 4 pm  )
 2. View your Attendance Records
 3. View your Leave Requests Records with your Reasons and Supervisors reasons for either approving or declining your leave requests
 4. Add/Edit/Delete your Leave Requests.
